@@ -13,11 +13,7 @@ class TestUpdateOffer:
 
         token, offer_id = create_and_delete_offer
 
-        update = UpdateOffer(
-            URLs.UPDATE_OFFER_URL,
-            token
-        )
-
+        update = UpdateOffer(URLs.UPDATE_OFFER_URL, token)
         status_code, response_body = update.update_offer(offer_id)
 
         with allure.step('Проверка кода и тела ответа'):
@@ -37,12 +33,7 @@ class TestUpdateOffer:
         
         _, offer_id = create_and_delete_offer
   
-
-        update = UpdateOffer(
-            URLs.UPDATE_OFFER_URL,
-            token_other_user
-        )
-
+        update = UpdateOffer(URLs.UPDATE_OFFER_URL, token_other_user)
         status_code, response_body = update.update_offer(offer_id)
 
         with allure.step('Проверка кода и тела ответа'):

@@ -31,10 +31,7 @@ class TestRegistrationUser:
     def test_registration_user_with_duplicate_email(self):
 
         test_data = generate_user_data()
-        regisration = RegistrationUser(
-            URLs.REGISTRATION_URL,
-            test_data
-        )
+        regisration = RegistrationUser(URLs.REGISTRATION_URL, test_data)
         regisration.registration_user()
 
         status_code, response_body = regisration.registration_user()

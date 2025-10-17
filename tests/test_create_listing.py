@@ -12,11 +12,7 @@ class TestCreateListing:
         
         token = create_user
 
-        listing = CreateListing(
-            URLs.CREATE_LISTING_URL,
-            token
-            )
-        
+        listing = CreateListing(URLs.CREATE_LISTING_URL, token)
         status_code, response_body = listing.create_listing()
         
         with allure.step('Проверка тела ответа и всех ожидаемых ключей'):

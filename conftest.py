@@ -23,11 +23,7 @@ def create_listing(create_user):
     
     token = create_user
 
-    create = create = CreateListing(
-        URLs.CREATE_LISTING_URL,
-            token
-    )
-
+    create = create = CreateListing(URLs.CREATE_LISTING_URL, token)
     _, response_body = create.create_listing()
 
     yield token, response_body["id"]
